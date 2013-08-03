@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action = "" method = "post">
+	{% csrf_token %}
+	<table>
+		{{f}}
+	</table>
+	<input type="submit" value="发送" class = 'btn btn-info'>
+</form>
+
+<hr>
+{%for i in ls%}
+<li>{{i.content}}<a class='btn' href = '/delete?id={{i.id}}'>删除</a><a class = 'btn' href = '/edit?id={{i.id}}'>编辑</a></li>
+{%endfor%}
+</hr>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form action = "" method = "post">
+	{% csrf_token %}
+	<table>
+		{{f}}
+		{{f.id}}
+		{{f.content}}
+	</table>
+	<input type="submit" value="发送" class = 'btn btn-info'>
+</form>
+
+<hr>
